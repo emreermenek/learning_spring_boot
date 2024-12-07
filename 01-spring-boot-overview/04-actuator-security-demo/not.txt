@@ -1,0 +1,14 @@
+spring.io sitesinden projects kısmından projelere bakarak öğrenebilirsin.
+*****
+actuator/beans
+List of all Spring beans registered with your application.
+Spring Boot internal beans and also your custom beans for your app(@Component ec)
+useful for debugging your app
+*****
+actuator/threaddump
+List of all threads running in your application
+Useful for analyzing and profiling your applicaion's performance
+*****
+actuator/mappings
+List all of the request mappings for your app
+Useful for finding out what request mappings are available
