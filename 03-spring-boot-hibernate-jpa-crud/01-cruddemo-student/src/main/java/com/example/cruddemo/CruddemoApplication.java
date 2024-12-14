@@ -20,11 +20,43 @@ public class CruddemoApplication {
 	public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
 		return runner -> {
 			//createStudent(studentDAO);
-			//createMultipleStudent(studentDAO);
+			createMultipleStudent(studentDAO);
 			//readStudent(studentDAO);
 			//queryForStudents(studentDAO);
-			queryForStudentsByLastName(studentDAO);
+			//queryForStudentsByLastName(studentDAO);
+			//updateStudent(studentDAO);
+			//deleteStudent(studentDAO);
+			//deleteAllStudent(studentDAO);
 		};
+	}
+
+	private void deleteAllStudent(StudentDAO studentDAO) {
+		int deletedRows = studentDAO.deleteAll();
+		System.out.println("Deleted " + deletedRows + " students");
+	}
+
+	private void deleteStudent(StudentDAO studentDAO) {
+		int id = 3;
+		System.out.println("Deleting the user with id : " + id);
+		studentDAO.delete(id);
+	}
+
+	private void updateStudent(StudentDAO studentDAO) {
+		// retrive the student based on the id : primary key
+		int id = 1;
+		System.out.println("Retrieving student with id : " + id);
+		Student student = studentDAO.findById(id);
+		System.out.println("Updating student : " + student);
+
+		// change the value
+		student.setFirstName("Scooby");
+
+		// update the student object
+		studentDAO.update(student);
+
+		// display the updated student object
+		System.out.println("Updated student : " + student);
+
 	}
 
 	private void queryForStudentsByLastName(StudentDAO studentDAO) {
