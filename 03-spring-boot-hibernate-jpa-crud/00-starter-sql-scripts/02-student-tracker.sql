@@ -1,7 +1,7 @@
 CREATE DATABASE  IF NOT EXISTS `student_tracker`;
 USE `student_tracker`;
 
---
+--studentstudent
 -- Table structure for table `student`
 --
 
